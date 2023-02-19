@@ -42,6 +42,7 @@ sudo cp -rf ./boot/config.txt.bak /boot/firmware/config.txt
 
 if [ "$version" = "20.10" ] || [[ "$version" > "20.10" ]]; then
 sudo cp -rf ./usr/99-calibration.conf-35-270  /etc/X11/xorg.conf.d/99-calibration.conf
+sudo sh -c "echo ' fbcon=map:10' >> /boot/firmware/cmdline.txt"
 else
 sudo cp -rf ./usr/99-calibration.conf-35-90  /etc/X11/xorg.conf.d/99-calibration.conf
 fi
